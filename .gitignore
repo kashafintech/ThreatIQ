@@ -1,0 +1,36 @@
+# Secrets
+.env
+.env.local
+secrets.toml
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Cache
+.cache/
+*.egg-info/
+.pytest_cache/
+
+# VS Code
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Model cache (huge, don't commit)
+*.h5
+*.pt
+*.pth
+*.safetensors
+
+# OS
+.DS_Store
+Thumbs.db

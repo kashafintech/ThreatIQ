@@ -1,0 +1,34 @@
+[
+  {
+    "id": "brand-001",
+    "text": "Brand impersonation occurs when an attacker pretends to represent a trusted company or organization to make a malicious message, website, or request appear legitimate."
+  },
+  {
+    "id": "brand-002",
+    "text": "A common brand impersonation indicator is a domain that looks similar to a legitimate organization's domain but contains misspellings, extra words, altered characters, or an unrelated top-level domain."
+  },
+  {
+    "id": "brand-003",
+    "text": "Attackers may copy a legitimate company's logo, colors, wording, email style, login page, or website design to make fraudulent content appear authentic."
+  },
+  {
+    "id": "brand-004",
+    "text": "Bank impersonation scams may claim that an account has a security problem, suspicious activity, payment issue, or verification requirement and then request credentials, codes, or financial information."
+  },
+  {
+    "id": "brand-005",
+    "text": "Cloud service impersonation may imitate services such as Microsoft, Google, Apple, or other technology providers and request users to verify an account, reset a password, or review a security alert."
+  },
+  {
+    "id": "brand-006",
+    "text": "Government impersonation scams may claim to represent tax authorities, law enforcement, immigration services, courts, or other government organizations and use threats, fines, or urgent deadlines to pressure victims."
+  },
+  {
+    "id": "brand-007",
+    "text": "Social media impersonation may imitate platforms or individual accounts and ask users to click a verification link, provide login credentials, share authentication codes, or make a payment."
+  },
+  {
+    "id": "brand-008",
+    "text": "When a message claims to represent a trusted brand, users should verify the sender, domain, and request through the organization's official website or another independently trusted communication channel."
+  }
+]

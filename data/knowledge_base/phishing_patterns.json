@@ -1,0 +1,34 @@
+[
+  {
+    "id": "phishing-001",
+    "text": "Phishing attacks commonly use urgent or threatening language to pressure victims into clicking a link, opening an attachment, verifying an account, or providing sensitive information."
+  },
+  {
+    "id": "phishing-002",
+    "text": "Credential phishing attempts often imitate trusted login pages or services and ask users to enter usernames, passwords, one-time codes, recovery codes, or other authentication information."
+  },
+  {
+    "id": "phishing-003",
+    "text": "Suspicious URLs may contain misspelled domains, unusual subdomains, misleading paths, excessive URL parameters, shortened links, or domains that do not match the claimed organization."
+  },
+  {
+    "id": "phishing-004",
+    "text": "Phishing messages frequently create artificial urgency by claiming an account will be suspended, a payment will fail, access will expire, or immediate action is required."
+  },
+  {
+    "id": "phishing-005",
+    "text": "Brand impersonation phishing occurs when attackers imitate a legitimate company, bank, government organization, cloud service, social platform, or other trusted entity to make fraudulent communication appear legitimate."
+  },
+  {
+    "id": "phishing-006",
+    "text": "Financial phishing may request payment, banking information, card details, cryptocurrency transfers, invoices, gift cards, or other financial actions while pretending to represent a legitimate organization."
+  },
+  {
+    "id": "phishing-007",
+    "text": "A suspicious message becomes more concerning when multiple indicators appear together, such as an unexpected message, urgent language, a suspicious URL, a credential request, and brand impersonation."
+  },
+  {
+    "id": "phishing-008",
+    "text": "Users should independently visit the official website or contact the organization through a trusted channel instead of using links or contact information provided inside a suspicious message."
+  }
+]

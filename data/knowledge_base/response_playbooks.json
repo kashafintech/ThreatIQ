@@ -1,0 +1,51 @@
+[
+  {
+    "id": "playbook-low",
+    "level": "LOW",
+    "text": "The evidence currently shows limited signs of malicious activity. Remain cautious and verify unexpected requests through trusted channels.",
+    "actions": [
+      "Do not provide sensitive information unless the request is independently verified.",
+      "Verify the sender and organization through an official source.",
+      "Avoid clicking unexpected links or opening unknown attachments.",
+      "Continue monitoring for additional suspicious activity."
+    ]
+  },
+  {
+    "id": "playbook-medium",
+    "level": "MEDIUM",
+    "text": "The evidence contains suspicious indicators that may represent phishing, fraud, or another social engineering attempt.",
+    "actions": [
+      "Do not click suspicious links or open unexpected attachments.",
+      "Do not provide passwords, authentication codes, financial information, or other sensitive data.",
+      "Verify the request through the organization's official website or trusted contact method.",
+      "If you already interacted with the content, review your recent account activity."
+    ]
+  },
+  {
+    "id": "playbook-high",
+    "level": "HIGH",
+    "text": "Multiple indicators suggest that the content may be malicious and could be attempting to steal credentials, money, or sensitive information.",
+    "actions": [
+      "Stop interacting with the suspicious content.",
+      "Do not enter credentials or financial information.",
+      "If credentials were entered, change the affected password immediately using the official website.",
+      "Enable multi-factor authentication where available.",
+      "Review account activity for unauthorized access or changes.",
+      "Report the suspicious message, website, or account to the relevant organization."
+    ]
+  },
+  {
+    "id": "playbook-critical",
+    "level": "CRITICAL",
+    "text": "The evidence contains strong indicators of an active or highly likely threat and may involve credential theft, financial fraud, malware, or account compromise.",
+    "actions": [
+      "Stop interacting with the suspicious content immediately.",
+      "Disconnect the affected device from the network if malicious activity or malware execution is suspected.",
+      "If credentials were entered, change them immediately from a trusted device.",
+      "Revoke suspicious active sessions and authentication tokens where possible.",
+      "Contact the affected bank, service provider, or organization through an official channel if financial or account information was exposed.",
+      "Preserve relevant messages, URLs, screenshots, and other evidence.",
+      "Report the incident to the appropriate security or incident-response team."
+    ]
+  }
+]
