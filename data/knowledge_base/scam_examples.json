@@ -1,0 +1,34 @@
+[
+  {
+    "id": "scam-001",
+    "text": "A common online scam claims that the victim has won a prize, lottery, giveaway, or reward and asks for personal information or an upfront payment to receive it."
+  },
+  {
+    "id": "scam-002",
+    "text": "Investment scams often promise unusually high or guaranteed returns, create urgency to invest quickly, and may request cryptocurrency or direct transfers."
+  },
+  {
+    "id": "scam-003",
+    "text": "Tech support scams may falsely claim that a device is infected or compromised and pressure the victim to install remote-access software, provide credentials, or pay for unnecessary support."
+  },
+  {
+    "id": "scam-004",
+    "text": "Delivery scams may impersonate courier companies and claim that a package is delayed, requires a small payment, or needs address verification through a suspicious link."
+  },
+  {
+    "id": "scam-005",
+    "text": "Job scams may offer attractive employment opportunities and then request registration fees, equipment payments, personal documents, banking information, or other sensitive information."
+  },
+  {
+    "id": "scam-006",
+    "text": "Romance scams involve building trust or an emotional relationship before requesting money, financial assistance, gift cards, cryptocurrency, or other valuable resources."
+  },
+  {
+    "id": "scam-007",
+    "text": "Impersonation scams may pretend to be a friend, family member, manager, government official, bank employee, or another trusted person and request urgent financial or sensitive actions."
+  },
+  {
+    "id": "scam-008",
+    "text": "Refund scams may falsely claim that a payment was made incorrectly or that the victim is owed a refund, then request banking information, remote access, verification codes, or a transfer."
+  }
+]
