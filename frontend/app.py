@@ -49,136 +49,103 @@ st.set_page_config(
 # THEME — injected once as a <style> block
 # ============================================================
 def apply_theme():
+
     st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
 
-/* ── Variables ────────────────────────────────────────────── */
 :root {
-    --bg:          #F5F7FA;
-    --surface:     #FFFFFF;
-    --surface2:    #F8FAFC;
-    --border:      #E2E8F0;
-    --border2:     #CBD5E1;
-    --text:        #0F172A;
-    --text2:       #64748B;
-    --text3:       #94A3B8;
-    --accent:      #0891B2;
-    --blue:        #2563EB;
-    --blue-hv:     #1D4ED8;
-    --low:         #059669;
-    --medium:      #D97706;
-    --high:        #DC2626;
-    --critical:    #B91C1C;
-    --shadow:      0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
-    --radius:      10px;
-    --radius-sm:   6px;
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #21262d;
+    --border: #30363d;
+    --border-accent: #1f6feb;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --blue: #238636;
+    --radius: 8px;
 }
 
-/* ── Shell ────────────────────────────────────────────────── */
 html, body, [class*="css"] {
-    font-family: 'Inter', system-ui, sans-serif !important;
-    background: var(--bg) !important;
+    font-family: 'Inter', sans-serif !important;
+    background-color: var(--bg) !important;
     color: var(--text) !important;
 }
-#MainMenu, footer, header { visibility: hidden; }
+
+#MainMenu, footer, header, .stAppHeader { display: none !important; }
+
 .block-container {
-    max-width: 780px !important;
-    padding: 2rem 1.5rem 5rem !important;
-    margin: 0 auto !important;
+    max-width: 850px !important;
+    padding: 2rem 1.5rem 4rem !important;
 }
 
-/* ── Buttons ──────────────────────────────────────────────── */
-.stButton > button {
-    background: var(--blue) !important;
-    color: #fff !important;
-    border: none !important;
-    border-radius: var(--radius-sm) !important;
-    font-family: 'Inter', sans-serif !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    padding: 9px 20px !important;
-    box-shadow: var(--shadow) !important;
-    transition: background 0.15s !important;
-    cursor: pointer !important;
-    width: 100% !important;
-}
-.stButton > button:hover { background: var(--blue-hv) !important; }
-.stButton > button:focus { outline: 2px solid var(--blue) !important; outline-offset: 2px !important; }
-
-/* ── Inputs ───────────────────────────────────────────────── */
-.stTextArea textarea, .stTextInput input {
-    background: var(--surface) !important;
-    border: 1px solid var(--border2) !important;
-    border-radius: var(--radius-sm) !important;
-    color: var(--text) !important;
-    font-family: 'JetBrains Mono', monospace !important;
-    font-size: 13px !important;
-    padding: 12px !important;
-    transition: border-color 0.15s !important;
-}
-.stTextArea textarea:focus, .stTextInput input:focus {
-    border-color: var(--blue) !important;
-    box-shadow: 0 0 0 3px rgba(37,99,235,0.08) !important;
-}
-
-/* ── Tabs ─────────────────────────────────────────────────── */
-.stTabs [data-baseweb="tab-list"] {
-    background: transparent !important;
-    border-bottom: 1px solid var(--border) !important;
-    gap: 0 !important;
-}
-.stTabs [data-baseweb="tab"] {
-    background: transparent !important;
-    color: var(--text2) !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    padding: 10px 18px !important;
-    border-bottom: 2px solid transparent !important;
-    font-family: 'Inter', sans-serif !important;
-}
-.stTabs [aria-selected="true"] {
-    color: var(--blue) !important;
-    border-bottom: 2px solid var(--blue) !important;
-}
-.stTabs [data-baseweb="tab-panel"] { padding-top: 16px !important; }
-
-/* ── Divider ──────────────────────────────────────────────── */
-hr { border: none !important; border-top: 1px solid var(--border) !important; margin: 1.5rem 0 !important; }
-
-/* ── Metric ───────────────────────────────────────────────── */
-[data-testid="stMetricValue"] { font-family: 'Inter', sans-serif !important; }
-
-/* ── Expander ─────────────────────────────────────────────── */
-.streamlit-expanderHeader {
-    font-weight: 600 !important;
-    font-size: 14px !important;
-    color: var(--text) !important;
+/* Glassmorphic Container Cards */
+.stMarkdown div[style*="background:#fff"], 
+.stMarkdown div[style*="background: #fff"],
+.stMarkdown div[style*="background: white"] {
     background: var(--surface) !important;
     border: 1px solid var(--border) !important;
-    border-radius: var(--radius-sm) !important;
+    border-left: 3px solid var(--border-accent) !important;
+    border-radius: var(--radius) !important;
+    color: var(--text) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
 }
 
-/* ── Markdown p spacing ───────────────────────────────────── */
-.stMarkdown p { margin-bottom: 0.4rem !important; }
+/* Fix text colors inside cards */
+.stMarkdown div[style*="color:#6E7681"], 
+.stMarkdown div[style*="color: #6E7681"] {
+    color: var(--text-muted) !important;
+}
 
-/* ── Pulsing status dot ───────────────────────────────────── */
+.stMarkdown div[style*="color:#0F172A"], 
+.stMarkdown div[style*="color: #0F172A"] {
+    color: var(--text) !important;
+}
+
+/* Monospace text for logs and code */
+code, pre, .stTextArea textarea, .stTextInput input {
+    font-family: 'JetBrains Mono', monospace !important;
+    background: var(--surface2) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+}
+
+/* Buttons Styling */
+.stButton > button {
+    background: #1f6feb !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: var(--radius) !important;
+    font-weight: 600 !important;
+    padding: 10px 24px !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 0 10px rgba(31, 111, 235, 0.3) !important;
+}
+
+.stButton > button:hover {
+    background: #388bfd !important;
+    box-shadow: 0 0 15px rgba(56, 139, 253, 0.6) !important;
+}
+
+/* Status Indicator Dot Glow */
 @keyframes pulse {
-    0%,100% { opacity:1; }
-    50%      { opacity:0.35; }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.95); }
 }
+
 .status-dot {
     display: inline-block;
-    width: 7px; height: 7px;
-    background: #059669;
+    width: 8px; height: 8px;
+    background: #3fb950;
     border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
-    margin-right: 5px;
-    vertical-align: middle;
+    box-shadow: 0 0 8px #3fb950;
+    animation: pulse 2s infinite;
+    margin-right: 6px;
 }
 </style>
 """, unsafe_allow_html=True)
-
 
 # ============================================================
 # SESSION STATE INIT
@@ -224,54 +191,39 @@ def go_to(screen: str):
 # ============================================================
 # SHARED HELPERS
 # ============================================================
-def generate_incident_id() -> str:
-    """Produce a short readable incident ID."""
-    suffix = uuid.uuid4().hex[:6].upper()
-    return f"TQ-{suffix}"
-
-
 def risk_color(level: str) -> str:
-    """Map risk level string to hex color."""
     return {
-        "LOW":      "#059669",
-        "MEDIUM":   "#D97706",
-        "HIGH":     "#DC2626",
-        "CRITICAL": "#B91C1C",
-    }.get(str(level).upper(), "#64748B")
-
+        "LOW": "#238636",
+        "MEDIUM": "#d29922",
+        "HIGH": "#db6d28",
+        "CRITICAL": "#f85149",
+    }.get(str(level).upper(), "#8b949e")
 
 def risk_bg(level: str) -> str:
-    """Light background tint for risk badges."""
     return {
-        "LOW":      "#D1FAE5",
-        "MEDIUM":   "#FEF3C7",
-        "HIGH":     "#FEE2E2",
-        "CRITICAL": "#FEE2E2",
-    }.get(str(level).upper(), "#F1F5F9")
-
+        "LOW": "rgba(35, 134, 54, 0.15)",
+        "MEDIUM": "rgba(210, 153, 34, 0.15)",
+        "HIGH": "rgba(219, 109, 40, 0.15)",
+        "CRITICAL": "rgba(248, 81, 73, 0.15)",
+    }.get(str(level).upper(), "rgba(139, 148, 158, 0.15)")
 
 def render_risk_badge(level: str):
-    """Render an inline colored risk-level badge via st.markdown."""
-    color  = risk_color(level)
-    bg     = risk_bg(level)
+    color = risk_color(level)
+    bg = risk_bg(level)
     st.markdown(
-        f'<span style="display:inline-block;padding:3px 12px;border-radius:99px;'
+        f'<span style="display:inline-block;padding:6px 14px;border-radius:20px;'
         f'background:{bg};color:{color};font-size:12px;font-weight:700;'
-        f'letter-spacing:0.06em;">{level.upper()}</span>',
+        f'border:1px solid {color};letter-spacing:0.08em;box-shadow:0 0 10px {bg};">{level.upper()}</span>',
         unsafe_allow_html=True,
     )
 
-
 def render_risk_bar(score: int, level: str):
-    """Horizontal progress bar colored by risk level."""
     color = risk_color(level)
-    pct   = min(max(int(score), 0), 100)
+    pct = min(max(int(score), 0), 100)
     st.markdown(
         f"""
-        <div style="background:#F1F5F9;border-radius:99px;height:10px;
-                    overflow:hidden;margin:10px 0;">
-          <div style="width:{pct}%;height:100%;background:{color};
-                      border-radius:99px;transition:width 0.6s ease;"></div>
+        <div style="background:#21262d;border-radius:8px;height:10px;overflow:hidden;margin:12px 0;">
+            <div style="width:{pct}%;height:100%;background:{color};border-radius:8px;box-shadow:0 0 8px {color};"></div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -501,8 +453,7 @@ def render_analysis_screen():
             if key not in state:
                 raise ValueError(f"Backend returned incomplete state — missing '{key}'")
 
-        # Store state and move to result
-        st.session_state["incident_state"] = state
+  ssion_state["incident_state"] = state
 
         # Extract questions for Screen 4
         user_actions = state.get("user_actions", [])
@@ -545,6 +496,9 @@ def render_error_screen():
 # ============================================================
 # SCREEN 3 — THREAT RESULT
 # ============================================================
+# ============================================================
+# SCREEN 3 — THREAT RESULT
+# ============================================================
 def render_result_screen():
     render_header(show_new_scan=True)
 
@@ -560,58 +514,58 @@ def render_result_screen():
     threat_type = state.get("threat_type", "Unknown Threat")
     color = risk_color(level)
 
-    # ── Risk Score Block ──────────────────────────────────────
-    st.markdown(
-        f'<div style="text-align:center;padding:32px 0 16px;">'
-        f'<div style="font-size:11px;font-weight:600;color:#94A3B8;'
-        f'letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Risk Score</div>'
-        f'<div style="font-size:72px;font-weight:700;letter-spacing:-0.04em;'
-        f'color:{color};line-height:1;">{score}'
-        f'<span style="font-size:28px;color:#94A3B8;font-weight:400;"> / 100</span></div>'
-        f'<div style="margin-top:12px;">'
-        f'<span style="display:inline-block;padding:4px 16px;border-radius:99px;'
-        f'background:{risk_bg(level)};color:{color};font-size:13px;font-weight:700;'
-        f'letter-spacing:0.08em;">{level}</span></div>'
-        f'</div>',
-        unsafe_allow_html=True,
-    )
+    # ── Top SOC Metrics (3 Columns Layout) ──────────────────────
+    c1, c2, c3 = st.columns(3)
+
+    with c1:
+        st.markdown(
+            f"""
+            <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;text-align:center;">
+                <div style="font-size:11px;font-weight:600;color:#8b949e;text-transform:uppercase;letter-spacing:0.08em;">Risk Score</div>
+                <div style="font-size:32px;font-weight:700;color:{color};">{score}<span style="font-size:14px;color:#8b949e;font-weight:400;"> / 100</span></div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with c2:
+        st.markdown(
+            f"""
+            <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;text-align:center;">
+                <div style="font-size:11px;font-weight:600;color:#8b949e;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Severity</div>
+                <span style="display:inline-block;padding:4px 12px;border-radius:20px;background:{risk_bg(level)};color:{color};font-size:12px;font-weight:700;border:1px solid {color};">{level}</span>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with c3:
+        st.markdown(
+            f"""
+            <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;text-align:center;">
+                <div style="font-size:11px;font-weight:600;color:#8b949e;text-transform:uppercase;letter-spacing:0.08em;">Threat Category</div>
+                <div style="font-size:14px;font-weight:700;color:#c9d1d9;margin-top:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{threat_type}</div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
     render_risk_bar(score, level)
     st.write("")
 
-    # ── Threat type ───────────────────────────────────────────
-    st.markdown(
-        f'<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;'
-        f'padding:16px 20px;margin-bottom:12px;">'
-        f'<span style="font-size:11px;font-weight:600;color:#94A3B8;'
-        f'letter-spacing:0.08em;text-transform:uppercase;">Threat Type</span><br>'
-        f'<span style="font-size:18px;font-weight:700;color:#0F172A;">{threat_type}</span>'
-        f'</div>',
-        unsafe_allow_html=True,
-    )
-
-    # ── Why we detected this ──────────────────────────────────
+    # ── Why we detected this (Indicators Section) ───────────────
     indicators = state.get("indicators", {})
-    risk_reasons = []
-
-    # Try to pull structured reasons from backend
-    if isinstance(indicators, dict):
-        risk_reasons = indicators.get("risk_reasons", [])
+    risk_reasons = indicators.get("risk_reasons", []) if isinstance(indicators, dict) else []
 
     if risk_reasons:
         st.markdown(
-            '<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;'
-            'padding:20px 24px;margin-bottom:12px;">',
-            unsafe_allow_html=True,
-        )
-        st.markdown(
-            '<p style="font-size:11px;font-weight:600;color:#94A3B8;'
-            'letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">'
-            'Why we detected this</p>',
+            '<div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px 24px;margin-bottom:16px;">'
+            '<p style="font-size:11px;font-weight:600;color:#8b949e;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">Why we detected this</p>',
             unsafe_allow_html=True,
         )
         for reason in risk_reasons:
             if isinstance(reason, dict):
-                pts   = reason.get("score", "")
+                pts = reason.get("score", "")
                 label = reason.get("reason", "")
                 value = reason.get("value", "")
             elif isinstance(reason, str):
@@ -622,52 +576,47 @@ def render_result_screen():
             pts_str = f"+{pts}" if pts else ""
             val_html = (
                 f'<span style="font-family:\'JetBrains Mono\',monospace;font-size:12px;'
-                f'color:#475569;background:#F8FAFC;padding:2px 7px;border-radius:4px;">'
+                f'color:#58a6ff;background:#21262d;padding:3px 8px;border-radius:4px;border:1px solid #30363d;">'
                 f'{value}</span>'
             ) if value else ""
 
             st.markdown(
-                f'<div style="display:flex;align-items:center;gap:12px;'
-                f'padding:9px 0;border-bottom:1px solid #F8FAFC;">'
-                f'<span style="font-family:\'JetBrains Mono\',monospace;font-size:13px;'
-                f'font-weight:600;color:#D97706;min-width:40px;">{pts_str}</span>'
-                f'<span style="font-size:14px;color:#0F172A;flex:1;">{label}</span>'
-                f'{val_html}</div>',
+                f"""
+                <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #21262d;">
+                    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:#d29922;min-width:40px;">{pts_str}</span>
+                    <span style="font-size:13px;color:#c9d1d9;flex:1;">{label}</span>
+                    {val_html}
+                </div>
+                """,
                 unsafe_allow_html=True,
             )
         st.markdown("</div>", unsafe_allow_html=True)
-    else:
-        # Fallback: show raw indicators dict if no structured reasons
-        if indicators:
-            with st.expander("Detected Indicators"):
-                if isinstance(indicators, dict):
-                    for k, v in indicators.items():
-                        if v and k != "risk_reasons":
-                            st.text(f"{k}: {v}")
-                else:
-                    st.text(str(indicators))
+    elif indicators:
+        with st.expander("Detected Indicators"):
+            if isinstance(indicators, dict):
+                for k, v in indicators.items():
+                    if v and k != "risk_reasons":
+                        st.text(f"{k}: {v}")
+            else:
+                st.text(str(indicators))
 
-    # ── Potential Impact ──────────────────────────────────────
+    # ── Potential Impact Section ────────────────────────────────
     potential_impact = state.get("potential_impact", [])
     if potential_impact:
         st.markdown(
-            '<div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;'
-            'padding:20px 24px;margin-bottom:16px;">',
-            unsafe_allow_html=True,
-        )
-        st.markdown(
-            '<p style="font-size:11px;font-weight:600;color:#94A3B8;'
-            'letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">'
-            'Potential Impact</p>',
+            '<div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px 24px;margin-bottom:16px;">'
+            '<p style="font-size:11px;font-weight:600;color:#8b949e;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Potential Impact</p>',
             unsafe_allow_html=True,
         )
         if isinstance(potential_impact, list):
             for item in potential_impact:
                 st.markdown(
-                    f'<div style="display:flex;gap:10px;align-items:flex-start;'
-                    f'padding:6px 0;font-size:14px;color:#0F172A;">'
-                    f'<span style="color:#DC2626;margin-top:1px;">▸</span>'
-                    f'<span>{item}</span></div>',
+                    f"""
+                    <div style="display:flex;gap:10px;align-items:flex-start;padding:6px 0;font-size:13px;color:#c9d1d9;">
+                        <span style="color:#f85149;margin-top:1px;">▸</span>
+                        <span>{item}</span>
+                    </div>
+                    """,
                     unsafe_allow_html=True,
                 )
         else:
@@ -676,16 +625,16 @@ def render_result_screen():
 
     st.write("")
 
-    # ── CTA ───────────────────────────────────────────────────
+    # ── Navigation Buttons ──────────────────────────────────────
     questions = st.session_state.get("questions", [])
     if questions:
         if st.button("Continue Investigation →", key="btn_continue_investigation"):
             go_to("investigation")
     else:
-        # No questions available — skip straight to response
         if st.button("View Response Plan →", key="btn_skip_to_response"):
             go_to("response")
-
+      # Store state and move to result
+        st.se
 
 # ============================================================
 # SCREEN 4 — ADAPTIVE INVESTIGATION
