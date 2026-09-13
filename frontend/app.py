@@ -453,7 +453,7 @@ def render_analysis_screen():
             if key not in state:
                 raise ValueError(f"Backend returned incomplete state — missing '{key}'")
 
-  ssion_state["incident_state"] = state
+ st.session_state["incident_state"] = state
 
         # Extract questions for Screen 4
         user_actions = state.get("user_actions", [])
